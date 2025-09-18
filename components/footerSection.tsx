@@ -1,0 +1,94 @@
+import React from 'react';
+
+const FooterSection = () => {
+  return (
+    <footer className="bg-blue-950 text-white">
+      {/* Hero Section */}
+      <div className="px-8 py-20 text-center">
+        <h1 className="text-5xl md:text-6xl font-serif text-white mb-6 leading-tight">
+          Your all-in-one solution for campus mental health
+        </h1>
+        <p className="text-xl text-gray-300 mb-12">
+          One contract. One experience. One team. One report.
+        </p>
+        
+        {/* CTA Banner */}
+        <div className="bg-gray-100 rounded-2xl px-8 py-6 max-w-4xl mx-auto flex items-center justify-between">
+          <p className="text-gray-800 text-lg font-medium">
+            Learn more about packaging and pricing for your campus.
+          </p>
+          <button className="bg-blue-600 text-white px-8 py-4 rounded-full font-medium hover:bg-blue-700 transition-colors ml-8">
+            Get in Touch
+          </button>
+        </div>
+      </div>
+
+      {/* Main Footer Content */}
+      <div className="border-t border-gray-700">
+        <div className="max-w-7xl mx-auto px-8 py-12">
+          {/* Top Row - Logo, Navigation, and Badges */}
+          <div className="flex items-center justify-between mb-12">
+            {/* Left Side - Logo and Navigation */}
+            <div className="flex items-center space-x-12 justifty-between w-full">
+              {/* Logo */}
+              <div>
+                <h2 className="text-3xl font-serif text-white">Lumina</h2>
+              </div>
+              
+              {/* Social Icons */}
+              {/* Navigation Links */}
+          <div className="space-x-8">
+            <a href="#" className="text-gray-300 hover:text-white transition-colors">About</a>
+            <a href="#" className="text-gray-300 hover:text-white transition-colors">Our Solutions</a>
+            <a href="#" className="text-gray-300 hover:text-white transition-colors">Careers</a>
+            <a href="#" className="text-gray-300 hover:text-white transition-colors">For Providers</a>
+            <a href="#" className="text-gray-300 hover:text-white transition-colors">FAQ</a>
+            <a href="#" className="text-gray-300 hover:text-white transition-colors">Blog</a>
+          </div>
+            </div>
+
+          
+          </div>
+
+        
+
+          {/* Bottom Section - Crisis Resources */}
+          <div className="border-t border-gray-700 pt-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
+              {/* Warning Message */}
+              <div className="md:col-span-1 flex items-start space-x-3">
+                <div className="flex-shrink-0 w-6 h-6 rounded-full border-2 border-red-400 flex items-center justify-center mt-1">
+                  <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                </div>
+                <p className="text-gray-300 text-sm">
+                  If you or a loved one is in emotional distress, here are some resources
+                </p>
+              </div>
+
+              {/* Suicide and Crisis Lifeline */}
+              <div className="text-center md:text-left">
+                <h4 className="text-white font-semibold mb-1">Suicide and Crisis Lifeline</h4>
+                <p className="text-gray-300 text-sm">Call or text 9-8-8 (Available 24/7)</p>
+              </div>
+
+              {/* Crisis Text Line */}
+              <div className="text-center md:text-left">
+                <h4 className="text-white font-semibold mb-1">Crisis Text Line</h4>
+                <p className="text-gray-300 text-sm">Text HOME to 741741</p>
+              </div>
+
+              {/* Crisis Resources Button */}
+              <div className="text-center md:text-right">
+                <button className="bg-red-500 text-white px-6 py-3 rounded-full font-medium hover:bg-red-600 transition-colors">
+                  Crisis Resources
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default FooterSection;

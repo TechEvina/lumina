@@ -16,7 +16,7 @@ export const InfiniteMovingCards = ({
     title: string;
   }[];
   direction?: "left" | "right";
-  speed?: "fast" | "normal" | "slow";
+  speed?: "faster" | "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
   className?: string;
 }) => {
@@ -60,7 +60,9 @@ export const InfiniteMovingCards = ({
   };
   const getSpeed = () => {
     if (containerRef.current) {
-      if (speed === "fast") {
+      if (speed === "faster") {
+        containerRef.current.style.setProperty("--animation-duration", "20s");
+      } else if (speed === "fast") {
         containerRef.current.style.setProperty("--animation-duration", "20s");
       } else if (speed === "normal") {
         containerRef.current.style.setProperty("--animation-duration", "40s");
@@ -86,7 +88,7 @@ export const InfiniteMovingCards = ({
         )}
       >
           {items.map((item, idx) => {
-            // Array of bright/happy colors
+            // Array of vibrant/bright colors
             const colors = [
               "#FFD700", // Gold
               "#FF69B4", // Hot Pink
@@ -103,9 +105,23 @@ export const InfiniteMovingCards = ({
               "#FF5E13", // Vivid Orange
               "#FF85A1", // Light Pink
               "#A3FFAE", // Mint
+              "#FF1493", // Deep Pink
+              "#00FF00", // Lime
+              "#00CED1", // Dark Turquoise
+              "#FF4500", // Orange Red
+              "#1E90FF", // Dodger Blue
+              "#32CD32", // Lime Green
+              "#FF8C00", // Dark Orange
+              "#8A2BE2", // Blue Violet
+              "#00FA9A", // Medium Spring Green
+              "#FF00FF", // Fuchsia
+              "#39FF14", // Neon Green
+              "#FF6EC7", // Neon Pink
+              "#FFDEAD", // Navajo White
+              "#00BFFF", // Deep Sky Blue
             ];
-            // Pick a random color for each card
-            const bgColor = colors[Math.floor(Math.random() * colors.length)];
+            // Assign color deterministically per card to avoid flicker
+            const bgColor = colors[idx % colors.length];
             // Helper to determine if color is light or dark
             function getContrastYIQ(hex: string) {
               hex = hex.replace('#', '');

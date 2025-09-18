@@ -14,13 +14,16 @@ const HeroSection = () => {
       <div className="absolute bottom-32 right-32">
         <div className="text-yellow-300 text-2xl">✦</div>
       </div>
+  <div className="absolute bottom-100 right-270">
+        <div className="text-yellow-300 text-2xl">✦</div>
+      </div>
 
       {/* Main content container */}
-      <div className="flex  justify-between px-24 py-20 h-[95vh]">
+      <div className="flex  justify-between px-48 py-20 h-[85vh]">
         {/* Left side - Text content */}
         <div className="flex-1 max-w-lg items-start flex flex-col justify-end">
-          <h1 className="text-white text-5xl font-medium leading-relaxed mb-12">
-            It is normal to feel
+          <h1 className="text-white text-5xl font-light leading-relaxed mb-12">
+            It is <b className='font-semibold'>normal</b> {" "} to feel
             <br />
             sad, stressed and
             <br />

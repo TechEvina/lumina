@@ -42,9 +42,7 @@ const mentalHealthInfo = [
 ];
   return (
      <div className="w-full bg-blue-500">
-   <InfiniteMovingCards  items={mentalHealthInfo}
-        direction="right"
-        speed="slow" />
+  <InfiniteMovingCards  items={mentalHealthInfo} direction="right" speed="faster" />
 </div>
   )
 }

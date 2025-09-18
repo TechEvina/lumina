@@ -1,127 +1,117 @@
-import React from 'react'
-import { PixelatedCanvas } from './pixelatedCanvas'
+import React from 'react';
 
 const MentalHealth = () => {
   return (
-     <section className="bg-gray-100 min-h-screen px-16 py-16">
-      <div className="max-w-7xl mx-auto h-screen relative">
-        {/* Heading - top left */}
-        <div className="absolute top-0 left-0 max-w-xl">
-          <h1 className="text-5xl font-normal text-gray-800 leading-tight">
-            Your mental health can fragment your life, but with support and care, you can piece it back together!
-          </h1>
+    <div className="bg-white px-8 py-16">
+      <div className="max-w-7xl mx-auto">
+        {/* Top banner */}
+        <div className="bg-blue-100 rounded-2xl px-6 py-4 mb-16 flex items-center justify-between">
+          <p className="text-gray-700 font-medium">
+            Meet our AI powered mental health solutions
+          </p>
+          <button className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
+            Learn More
+          </button>
         </div>
 
-        {/* Image 1 - top right (large) */}
-        <div className="absolute top-0 right-0 w-90 h-120 bg-gray-300 rounded-2xl overflow-hidden shadow-lg">
-           <PixelatedCanvas
-        src="https://images.unsplash.com/photo-1630487656049-6db93a53a7e9?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        width={800}
-        height={600}
-        cellSize={4}
-        dotScale={0.9}
-        shape="square"
-        backgroundColor="#000000"
-        dropoutStrength={0.1}
-        interactive
-        distortionStrength={0.1}
-        distortionRadius={200}
-        distortionMode="repel"
-        followSpeed={0.2}
-        jitterStrength={4}
-        jitterSpeed={1}
-        sampleAverage
-        className="rounded-xl shadow-lg"
-      />
-        </div>
-
-        {/* Heart SVG - center middle */}
-        <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 flex items-center justify-center">
-          <svg 
-            width="160" 
-            height="160" 
-            viewBox="0 0 100 100" 
-            className="drop-shadow-lg hover:scale-110 transition-transform duration-300"
-          >
-            <defs>
-              <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#ef4444" />
-                <stop offset="50%" stopColor="#dc2626" />
-                <stop offset="100%" stopColor="#b91c1c" />
-              </linearGradient>
-            </defs>
-            <path 
-              d="M50,85 C50,85 20,60 20,40 C20,25 30,15 45,20 C50,22 50,22 55,20 C70,15 80,25 80,40 C80,60 50,85 50,85 Z" 
-              fill="url(#heartGradient)"
-              stroke="#991b1b" 
-              strokeWidth="1"
-              className="animate-pulse"
-            />
-            {/* Heart shine effect */}
-            <ellipse 
-              cx="42" 
-              cy="35" 
-              rx="8" 
-              ry="12" 
-              fill="#ffffff" 
-              opacity="0.3"
-              transform="rotate(-20 42 35)"
-            />
-          </svg>
-        </div>
-
-        {/* Image 3 - bottom left (large) */}
-        <div className="absolute bottom-32 left-0 w-100 h-80 bg-gray-300 rounded-2xl overflow-hidden shadow-lg">
-             <PixelatedCanvas
-        src="https://images.unsplash.com/photo-1630487656049-6db93a53a7e9?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        width={800}
-        height={600}
-        cellSize={4}
-        dotScale={0.9}
-        shape="square"
-        backgroundColor="#000000"
-        dropoutStrength={0.1}
-        interactive
-        distortionStrength={0.1}
-        distortionRadius={200}
-        distortionMode="repel"
-        followSpeed={0.2}
-        jitterStrength={4}
-        jitterSpeed={1}
-        sampleAverage
-        className="rounded-xl shadow-lg"
-      />
-        </div>
-
-        {/* Stats - bottom right */}
-        <div className="absolute bottom-16 right-0 flex space-x-16">
-          {/* Stat 1 */}
-          <div className="text-center">
-            <div className="text-5xl font-light text-gray-800 mb-2">
-              1k<span className="text-2xl">+</span>
-            </div>
-            <p className="text-sm text-gray-600">World champions</p>
+        {/* Main content */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Left column - Main text and button */}
+          <div className="lg:col-span-1">
+            <h1 className="text-5xl font-serif text-gray-900 mb-6">
+              Mental health <em className="italic">matters {" "}</em>
+          
+                for everyone.
+            </h1>
+            <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+              Reach underserved student populations and provide 24/7 support across every stage of the mental health journey.
+            </p>
+            <button className="bg-blue-600 text-white px-8 py-4 rounded-full font-medium hover:bg-blue-700 transition-colors">
+              Explore Solutions
+            </button>
           </div>
 
-          {/* Stat 2 */}
-          <div className="text-center">
-            <div className="text-5xl font-light text-gray-800 mb-2">
-              1.8<span className="text-2xl">%</span>
+          {/* Right columns - Service cards */}
+          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Expand Care card */}
+            <div className="bg-blue-200 rounded-2xl p-6 group hover:bg-blue-100 transition-colors cursor-pointer">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-gray-900">Expand Care</h3>
+                <svg 
+                  className="w-6 h-6 text-gray-400 group-hover:text-blue-600 transition-colors" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+              <p className="text-gray-600">
+                Improve access to clinical care for students in need.
+              </p>
             </div>
-            <p className="text-sm text-gray-600">Runner up champions</p>
-          </div>
 
-          {/* Stat 3 */}
-          <div className="text-center">
-            <div className="text-5xl font-light text-gray-800 mb-2">
-              4.5<span className="text-2xl">m</span>
+            {/* Manage Crises card */}
+            <div className="bg-blue-200 rounded-2xl p-6 group hover:bg-blue-100 transition-colors cursor-pointer">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-gray-900">Manage Crises</h3>
+                <svg 
+                  className="w-6 h-6 text-gray-400 group-hover:text-blue-600 transition-colors" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+              <p className="text-gray-600">
+                Catch severe cases, and deliver an empathetic evidence-based treatment.
+              </p>
             </div>
-            <p className="text-sm text-gray-600">Sea games participation</p>
+
+            {/* Promote Wellness card */}
+            <div className="bg-blue-200 rounded-2xl p-6 group hover:bg-blue-100 transition-colors cursor-pointer">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-gray-900">Promote Wellness</h3>
+                <svg 
+                  className="w-6 h-6 text-gray-400 group-hover:text-blue-600 transition-colors" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+              <p className="text-gray-600">
+                Support student wellbeing and foster social connectedness on campus.
+              </p>
+            </div>
+
+            {/* Prevent Escalation card */}
+            <div className="bg-blue-200 rounded-2xl p-6 group hover:bg-blue-100 transition-colors cursor-pointer">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-gray-900">Prevent Escalation</h3>
+                <svg 
+                  className="w-6 h-6 text-gray-400 group-hover:text-blue-600 transition-colors" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+              <p className="text-gray-600">
+                Give students with mild symptoms the care they need to get back on track.
+              </p>
+            </div>
+            
           </div>
         </div>
+        
+          <div className="border-t border-gray-200  mt-20 "></div>
       </div>
-    </section>
-  )
-}
+    </div>
+  );
+};
 
-export default MentalHealth
+export default MentalHealth;
