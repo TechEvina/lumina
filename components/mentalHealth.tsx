@@ -15,11 +15,11 @@ const MentalHealth = () => {
         </div>
 
         {/* Main content */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 ">
           {/* Left column - Main text and button */}
-          <div className="lg:col-span-1">
-            <h1 className="text-5xl font-serif text-gray-900 mb-6">
-              Mental health <em className="italic">matters {" "}</em>
+          <div className="lg:col-span-1 mt-10">
+            <h1 className="text-5xl text-gray-900 mb-6">
+              Mental health <p className='font-semibold inline'>matters {" "}</p>
           
                 for everyone.
             </h1>

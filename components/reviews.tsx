@@ -10,10 +10,10 @@ const StudentSuccessSection = () => {
           <div className="bg-gradient-to-br from-blue-200 to-purple-200 rounded-3xl px-16 py-20 mx-auto max-w-7xl relative z-10">
             {/* Header */}
             <div className="text-center mb-16">
-              <h1 className="text-6xl font-serif text-gray-900 mb-4">
+              <h1 className="text-6xl text-gray-900 mb-4">
                 Proven to help students
                 <br />
-                <em className="italic">stay in school.</em>
+                <p className="font-semibold">stay in school.</p>
               </h1>
             </div>
 

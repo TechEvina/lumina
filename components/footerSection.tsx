@@ -5,7 +5,7 @@ const FooterSection = () => {
     <footer className="bg-blue-950 text-white">
       {/* Hero Section */}
       <div className="px-8 py-20 text-center">
-        <h1 className="text-5xl md:text-6xl font-serif text-white mb-6 leading-tight">
+        <h1 className="text-5xl md:text-6xl text-white mb-6 leading-tight">
           Your all-in-one solution for campus mental health
         </h1>
         <p className="text-xl text-gray-300 mb-12">
@@ -32,7 +32,7 @@ const FooterSection = () => {
             <div className="flex items-center space-x-12 justifty-between w-full">
               {/* Logo */}
               <div>
-                <h2 className="text-3xl font-serif text-white">Lumina</h2>
+                <h2 className="text-3xl  text-white">Lumina</h2>
               </div>
               
               {/* Social Icons */}
