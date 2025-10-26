@@ -72,7 +72,7 @@ const MentalHealth = () => {
             </div>
 
             {/* Promote Wellness card */}
-            <div className="bg-orange-400 rounded-2xl p-6 group hover:bg-blue-100 transition-colors cursor-pointer" >
+            <div className="bg-orange-400 rounded-2xl p-6 group hover:bg-blue-100 transition-colors cursor-pointer" onClick={() => window.location.href = '/aitherapist'}>
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold text-gray-900">AI Therapist</h3>
                 <svg 

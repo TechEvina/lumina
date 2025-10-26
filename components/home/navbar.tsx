@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const Navbar = () => {
   const router = useRouter();
@@ -17,12 +18,16 @@ const Navbar = () => {
     <nav className="flex items-center justify-between px-8 py-4 bg-blue-500">
       {/* Logo */}
       <div className="flex items-center cursor-pointer" onClick={() => router.push('/')}>
-        <div className="w-10 h-10 bg-gradient-to-br from-pink-300 to-pink-400 rounded-lg flex items-center justify-center">
-          <div className="w-3 h-3 bg-pink-500 rounded-full"></div>
+        <div className="flex items-center justify-center">
+          <Image
+            src="/assets/logo.png"
+            alt="Lumina logo"
+            width={40}
+            height={40}
+            className="object-contain"
+          />
         </div>
-        <p className='ml-4 text-white font-light text-3xl'>
-        Lumina
-        </p>
+        <p className="ml-4 text-white text-3xl">Lumina</p>
       </div>
 
       {/* Navigation Links */}
