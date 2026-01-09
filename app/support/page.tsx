@@ -7,9 +7,9 @@ import {
   categories, 
   getAllDiscussions, 
   getCategoryColor 
-} from '../../lib/forum';
-import { getTotalCommentCount } from '../../lib/forumStorage';
-import BackButton from '../../components/BackButton';
+} from '@/lib/forum';
+import { getTotalCommentCount } from '@/lib/forumStorage';
+import BackButton from '@/components/BackButton';
 
 const MentalHealthForum = () => {
   const [selectedFilter, setSelectedFilter] = useState('View all');

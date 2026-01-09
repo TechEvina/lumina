@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from 'next/navigation';
 import Vapi from "@vapi-ai/web";
-import BackButton from '../../components/BackButton';
+import BackButton from '@/components/BackButton';
 
 interface VapiWidgetProps {
   apiKey?: string;
