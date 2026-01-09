@@ -3,6 +3,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* headspace-style palette */
+  --white: #FFFFFF;
+  --dark-charcoal: #2D2C2B;
+  --medium-gray: #6B6B6B;
+  --warm-orange: #FF6E40;
+  --blue-accent: #0061EF;
+  --light-highlight: #F9F4F2;
+  --soft-sky-blue: #A1D4E6;
+  --calm-teal: #82C7D6;
+  --soft-yellow: #FFCE00;
+  --pastel-purple: #D9A9FF;
 }
 @custom-variant dark (&:where(.dark, .dark *));
 @import "tailwindcss";
@@ -27,5 +39,98 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Outfit, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Outfit, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+.dark {
+  --background: #1a1a1a;
+  --foreground: #f5f5f5;
+}
+
+.dark body {
+  background: #1a1a1a;
+  color: #f5f5f5;
+}
+
+/* Text Size Adjustments */
+[data-text-size="small"] {
+  font-size: 90%;
+}
+
+[data-text-size="medium"] {
+  font-size: 100%;
+}
+
+[data-text-size="large"] {
+  font-size: 110%;
+}
+
+[data-text-size="xlarge"] {
+  font-size: 125%;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  filter: contrast(1.5);
+}
+
+.high-contrast button,
+.high-contrast a {
+  border: 2px solid currentColor !important;
+}
+
+/* Reduced Motion */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* Dyslexia-Friendly Font */
+.dyslexia-font * {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', Arial, sans-serif !important;
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+  line-height: 1.8;
+}
+
+/* Dark mode improvements for components */
+.dark .bg-white {
+  background-color: #2d2d2d !important;
+}
+
+.dark .bg-gray-50 {
+  background-color: #2a2a2a !important;
+}
+
+.dark .bg-gray-100 {
+  background-color: #333333 !important;
+}
+
+.dark .text-gray-900 {
+  color: #f5f5f5 !important;
+}
+
+.dark .text-gray-800 {
+  color: #e5e5e5 !important;
+}
+
+.dark .text-gray-700 {
+  color: #d5d5d5 !important;
+}
+
+.dark .text-gray-600 {
+  color: #c5c5c5 !important;
+}
+
+.dark .border-gray-200 {
+  border-color: #444444 !important;
+}
+
+.dark .border-gray-300 {
+  border-color: #555555 !important;
 }
