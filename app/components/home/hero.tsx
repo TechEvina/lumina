@@ -27,17 +27,19 @@ const HeroSection = () => {
   // Typewriter effect
   useEffect(() => {
     const currentQuote = quotes[currentQuoteIndex];
-    const typingSpeed = isDeleting ? 50 : 100;
-    const pauseTime = isDeleting ? 1000 : 2000;
+    const typingSpeed = isDeleting ? 30 : 80;
+    const pauseAfterTyping = 3000;
+    const pauseAfterDeleting = 500;
 
     if (!isDeleting && displayedText === currentQuote) {
-      setTimeout(() => setIsDeleting(true), pauseTime);
+      setTimeout(() => setIsDeleting(true), pauseAfterTyping);
       return;
     }
 
     if (isDeleting && displayedText === '') {
       setIsDeleting(false);
       setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
+      setTimeout(() => {}, pauseAfterDeleting);
       return;
     }
 
@@ -96,13 +98,13 @@ const HeroSection = () => {
         {/* LEFT SIDE - Text Content */}
         <div className="w-full lg:w-1/2 z-10">
           <h1 
-            className={`text-[#1F2933] text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 max-w-2xl transition-all duration-1000 ${
+            className={`text-[#1F2933] text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 max-w-2xl transition-all duration-700 ease-in-out ${
               animationsTriggered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
             }`}
             style={{ transitionDelay: '500ms', minHeight: '1.2em' }}
           >
-            {getHeadline()}
-            <span className="animate-pulse">|</span>
+            <span className="inline-block">{getHeadline()}</span>
+            <span className="inline-block w-1 h-16 bg-[#FF7A59] ml-2 animate-pulse" style={{ animationDuration: '1s' }}></span>
           </h1>
 
           <p 
