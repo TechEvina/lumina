@@ -54,13 +54,13 @@ const AuthModal = ({ onAuth }) => {
         className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl"
       >
         <div className="text-center mb-6">
-          <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-gradient-to-r from-[#FF7A59] to-[#6EC1E4] rounded-full flex items-center justify-center mx-auto mb-4">
             <User className="w-8 h-8 text-white" />
           </div>
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+          <h2 className="text-3xl font-bold text-[#1F2933] mb-2">
             {isLogin ? 'Welcome Back!' : 'Create Account'}
           </h2>
-          <p className="text-gray-600">
+          <p className="text-[#6B7280]">
             {isLogin ? 'Sign in to access your dashboard' : 'Start your mental health journey'}
           </p>
         </div>
@@ -72,7 +72,7 @@ const AuthModal = ({ onAuth }) => {
               type="text"
               value={formData.username}
               onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:outline-none transition-colors"
+              className="w-full px-4 py-3 rounded-xl border-2 border-[#E5E7EB] focus:border-[#6EC1E4] focus:outline-none transition-colors"
               placeholder="Enter username"
               required
             />
@@ -85,7 +85,7 @@ const AuthModal = ({ onAuth }) => {
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-xl border-2 border-[#E5E7EB] focus:border-[#6EC1E4] focus:outline-none transition-colors"
                 placeholder="Enter email"
                 required={!isLogin}
               />
@@ -98,7 +98,7 @@ const AuthModal = ({ onAuth }) => {
               type="password"
               value={formData.password}
               onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:outline-none transition-colors"
+              className="w-full px-4 py-3 rounded-xl border-2 border-[#E5E7EB] focus:border-[#6EC1E4] focus:outline-none transition-colors"
               placeholder="Enter password"
               required
             />
@@ -106,7 +106,7 @@ const AuthModal = ({ onAuth }) => {
 
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all shadow-md hover:shadow-lg"
+            className="w-full bg-[#FF7A59] text-white py-3 rounded-xl font-semibold hover:bg-[#FF8A69] transition-all shadow-md hover:shadow-lg"
           >
             {isLogin ? 'Sign In' : 'Create Account'}
           </button>
@@ -383,13 +383,13 @@ const Dashboard = () => {
                   onChange={(e) => setChatInput(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSendMessage(chatInput)}
                   placeholder="Type message..."
-                  className="flex-1 px-3 sm:px-4 py-2 bg-gray-100 rounded-full text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="flex-1 px-3 sm:px-4 py-2 bg-gray-100 rounded-full text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#6EC1E4]"
                 />
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => handleSendMessage(chatInput)}
-                  className="px-4 sm:px-6 py-2 bg-blue-500 text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-blue-600 transition-all shadow-md"
+                  className="px-4 sm:px-6 py-2 bg-[#FF7A59] text-white rounded-full text-xs sm:text-sm font-semibold hover:bg-[#FF8A69] transition-all shadow-md"
                 >
                   <span className="hidden sm:inline">Send</span>
                   <Send className="w-4 h-4 sm:hidden" />
@@ -406,7 +406,7 @@ const Dashboard = () => {
                     transition={{ delay: 0.2 + index * 0.1 }}
                     whileHover={{ scale: 1.05, y: -2 }}
                     onClick={() => handleQuickSuggestion(suggestion)}
-                    className="px-4 py-2 bg-blue-500 text-white rounded-full text-sm hover:bg-blue-600 transition-all shadow-md"
+                    className="px-4 py-2 bg-[#6EC1E4] text-white rounded-full text-sm hover:bg-[#5AB0D3] transition-all shadow-md"
                   >
                     {suggestion}
                   </motion.button>
@@ -422,7 +422,7 @@ const Dashboard = () => {
               className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all"
             >
               <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-500 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#6EC1E4] rounded-full flex items-center justify-center">
                   <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div>
@@ -440,7 +440,7 @@ const Dashboard = () => {
                       initial={{ height: 0 }}
                       animate={{ height: `${value * 10}%` }}
                       transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
-                      className="flex-1 bg-gradient-to-t from-purple-500 to-purple-300 rounded-t-lg hover:from-purple-600 hover:to-purple-400 transition-all cursor-pointer relative group"
+                      className="flex-1 bg-gradient-to-t from-[#6EC1E4] to-[#A0D9F5] rounded-t-lg hover:from-[#5AB0D3] hover:to-[#8FCCE8] transition-all cursor-pointer relative group"
                     >
                       <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
                         {value}/10
@@ -466,8 +466,8 @@ const Dashboard = () => {
                 </div>
               )}
 
-              <div className="mt-4 p-3 bg-blue-50 rounded-xl border border-blue-200">
-                <p className="text-sm text-blue-800 font-medium">
+              <div className="mt-4 p-3 bg-blue-50 rounded-xl border border-[#6EC1E4]">
+                <p className="text-sm text-[#1F2933] font-medium">
                   {moodData.length > 0 ? "🎉 Keep tracking your mood daily!" : "✨ Start your mood tracking journey today"}
                 </p>
               </div>
@@ -480,7 +480,7 @@ const Dashboard = () => {
                   const randomMood = Math.floor(Math.random() * 3) + 7; // Random 7-9 for demo
                   setMoodData([...moodData, randomMood].slice(-7)); // Keep last 7 days
                 }}
-                className="mt-3 w-full bg-purple-500 text-white py-2 rounded-xl font-medium hover:bg-purple-600 transition-all"
+                className="mt-3 w-full bg-[#FF7A59] text-white py-2 rounded-xl font-medium hover:bg-[#FF8A69] transition-all"
               >
                 + Log Today's Mood
               </motion.button>
@@ -634,7 +634,7 @@ const Dashboard = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setShowNotifications(!showNotifications)}
-        className="fixed top-20 sm:top-24 right-4 sm:right-6 w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 rounded-full shadow-lg flex items-center justify-center text-white z-50 hover:bg-blue-700 transition-all"
+        className="fixed top-20 sm:top-24 right-4 sm:right-6 w-12 h-12 sm:w-14 sm:h-14 bg-[#6EC1E4] rounded-full shadow-lg flex items-center justify-center text-white z-50 hover:bg-[#5AB0D3] transition-all"
       >
         <Bell className="w-5 h-5 sm:w-6 sm:h-6" />
         {(notifications > 0 || appointments.length > 0 || completedResources.length > 0) && (

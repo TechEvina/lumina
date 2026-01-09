@@ -5,11 +5,11 @@ import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FileText, Video, Activity, Star, TrendingUp, Clock, CheckCircle, X, BookOpen, Headphones, Heart } from 'lucide-react';
-import { articlesData, categories } from '../../lib/articles';
-import BackButton from '../../components/BackButton';
-import EmergencyBar from '../../components/EmergencyBar';
-import Navbar from '../../components/home/navbar';
-import AccessibilityMenu from '../../components/AccessibilityMenu';
+import { articlesData, categories } from '@/lib/articles';
+import BackButton from '@/components/BackButton';
+import EmergencyBar from '@/components/EmergencyBar';
+import Navbar from '@/components/home/navbar';
+import AccessibilityMenu from '@/components/AccessibilityMenu';
 
 // resource type config w/ icons & colors
 const resourceTypes = {

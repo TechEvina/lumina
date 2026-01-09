@@ -1,20 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F9FAFB;
+  --foreground: #1F2933;
   
-  /* headspace-style palette */
-  --white: #FFFFFF;
-  --dark-charcoal: #2D2C2B;
-  --medium-gray: #6B6B6B;
-  --warm-orange: #FF6E40;
-  --blue-accent: #0061EF;
-  --light-highlight: #F9F4F2;
-  --soft-sky-blue: #A1D4E6;
-  --calm-teal: #82C7D6;
-  --soft-yellow: #FFCE00;
-  --pastel-purple: #D9A9FF;
+  /* Judge-safe mental health color palette */
+  --soft-off-white: #F9FAFB;
+  --warm-coral: #FF7A59;
+  --soft-sky-blue: #6EC1E4;
+  --deep-charcoal: #1F2933;
+  --muted-gray: #6B7280;
+  --pure-white: #FFFFFF;
+  --light-neutral-gray: #E5E7EB;
+  
+  /* Dark mode palette */
+  --dark-navy: #0F172A;
+  --dark-cards: #1E293B;
+  --dark-text-primary: #F8FAFC;
+  --dark-text-secondary: #CBD5E1;
 }
 @custom-variant dark (&:where(.dark, .dark *));
 @import "tailwindcss";
@@ -45,13 +48,13 @@ body {
 
 /* Dark Mode */
 .dark {
-  --background: #1a1a1a;
-  --foreground: #f5f5f5;
+  --background: #0F172A;
+  --foreground: #F8FAFC;
 }
 
 .dark body {
-  background: #1a1a1a;
-  color: #f5f5f5;
+  background: #0F172A;
+  color: #F8FAFC;
 }
 
 /* Text Size Adjustments */

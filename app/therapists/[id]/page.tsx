@@ -4,9 +4,9 @@
 import React, { useState, use } from 'react';
 import { useRouter } from 'next/navigation';
 import { ChevronLeft, MapPin, DollarSign, Clock, Award, CheckCircle } from 'lucide-react';
-import { findTherapistById, getTherapistInitials } from '../../../lib/therapists';
-import BackButton from '../../../components/BackButton';
-import BookingModal from '../../../components/BookingModal';
+import { findTherapistById, getTherapistInitials } from '@/lib/therapists';
+import BackButton from '@/components/BackButton';
+import BookingModal from '@/components/BookingModal';
 
 const TherapistProfilePage = ({ params }: { params: Promise<{ id: string }> }) => {
   const [activeTab, setActiveTab] = useState('My Approach');

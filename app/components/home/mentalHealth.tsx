@@ -8,8 +8,22 @@ const MentalHealth = () => {
   const router = useRouter();
   
   return (
-    <div className="bg-white px-8 py-12" id="how-it-works">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-white px-8 py-12 relative overflow-hidden" id="how-it-works">
+      {/* Background Video */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-50"
+      >
+        <source src="/video/background-video.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-white/30"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* header */}
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-[#2D2C2B] mb-4">How Lumina Works</h2>

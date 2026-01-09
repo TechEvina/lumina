@@ -47,30 +47,17 @@ const HeroSection = () => {
   
   return (
     <section 
-      className="relative overflow-hidden"
+      className="relative overflow-hidden bg-[#F9FAFB]"
       role="banner"
-      style={{ marginTop: '80px', minHeight: '100vh' }}
+      style={{ marginTop: '80px', minHeight: '90vh' }}
     >
-      <video 
-        autoPlay 
-        muted 
-        loop 
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        style={{ zIndex: 0 }}
-      >
-        <source src="https://cdn.pixabay.com/video/2023/04/27/159558-821662086_large.mp4" type="video/mp4" />
-      </video>
-
-      <div 
-        className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/50 via-black/40 to-black/60"
-        style={{ zIndex: 1 }}
-      />
-
-      <div className="relative flex items-center justify-center px-8 md:px-16 lg:px-24 py-12 min-h-screen" style={{ zIndex: 2 }}>
-        <div className="max-w-4xl mx-auto text-center">
+      {/* Main container */}
+      <div className="relative flex items-center justify-between px-8 md:px-16 lg:px-24 py-12 min-h-[90vh] max-w-7xl mx-auto">
+        
+        {/* LEFT SIDE - Text Content */}
+        <div className="w-full lg:w-1/2 z-10">
           <h1 
-            className={`text-white text-4xl md:text-6xl font-bold leading-tight mb-6 transition-all duration-1000 ${
+            className={`text-[#1F2933] text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 max-w-2xl transition-all duration-1000 ${
               animationsTriggered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
             }`}
             style={{ transitionDelay: '500ms' }}
@@ -79,7 +66,7 @@ const HeroSection = () => {
           </h1>
 
           <p 
-            className={`text-white text-lg md:text-2xl font-light leading-relaxed mb-10 transition-all duration-1000 ${
+            className={`text-[#6B7280] text-lg md:text-xl lg:text-2xl font-light leading-relaxed mb-10 max-w-xl transition-all duration-1000 ${
               animationsTriggered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
             }`}
             style={{ transitionDelay: '1200ms' }}
@@ -87,25 +74,58 @@ const HeroSection = () => {
             {getDescription()}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4">
+            {/* Primary CTA - Warm Coral */}
             <button 
               onClick={() => router.push('/aitherapist')}
-              className={`text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl transition-all duration-1000 hover:scale-110 ${
+              className={`bg-[#FF7A59] hover:bg-[#FF8A69] text-white px-10 py-4 rounded-full text-lg font-bold shadow-lg transition-all duration-300 hover:scale-105 ${
                 animationsTriggered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
               }`}
-              style={{ transitionDelay: '2000ms', backgroundColor: '#FF6E40' }}
+              style={{ transitionDelay: '2000ms' }}
             >
               {getButtonPrimary()}
             </button>
+            
+            {/* Secondary CTA - Soft Sky Blue */}
             <button 
               onClick={() => router.push('/therapists')}
-              className={`bg-white bg-opacity-20 backdrop-blur-md text-white border-2 border-white px-10 py-4 rounded-full text-lg font-semibold shadow-xl transition-all duration-1000 hover:bg-opacity-30 hover:scale-110 ${
+              className={`bg-transparent border-2 border-[#6EC1E4] text-[#6EC1E4] px-10 py-4 rounded-full text-lg font-semibold shadow-lg transition-all duration-300 hover:bg-[#6EC1E4] hover:text-white hover:scale-105 ${
                 animationsTriggered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
               }`}
               style={{ transitionDelay: '2500ms' }}
             >
               {getButtonSecondary()}
             </button>
+          </div>
+        </div>
+
+        {/* RIGHT SIDE - Animated Visual */}
+        <div className="hidden lg:block w-1/2 h-[90vh] relative">
+          <div 
+            className={`absolute -right-20 top-1/2 -translate-y-1/2 w-[120%] h-full transition-all duration-1000 ${
+              animationsTriggered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+            }`}
+            style={{ transitionDelay: '1500ms' }}
+          >
+            <div className="w-full h-full flex items-center justify-center relative">
+              <div className="absolute w-96 h-96 rounded-full bg-gradient-to-br from-[#FF7A59] to-[#FF9E8F] opacity-25 blur-3xl animate-pulse" 
+                   style={{ animationDuration: '3s' }} />
+              <div className="absolute w-80 h-80 rounded-full bg-gradient-to-tl from-[#6EC1E4] to-[#A0D9F5] opacity-20 blur-2xl animate-pulse" 
+                   style={{ animationDuration: '4s', animationDelay: '1s' }} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile - Animated visual */}
+      <div className="lg:hidden w-full h-96 relative px-8">
+        <div className={`w-full h-full transition-all duration-1000 ${
+          animationsTriggered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+        style={{ transitionDelay: '1500ms' }}
+        >
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="w-64 h-64 rounded-full bg-gradient-to-br from-[#FF7A59] to-[#6EC1E4] opacity-25 blur-3xl animate-pulse" />
           </div>
         </div>
       </div>

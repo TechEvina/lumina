@@ -5,8 +5,8 @@ import React, { useState, useEffect, use } from 'react';
 import { ChevronLeft, Clock, User, Calendar, Share2, Bookmark, ArrowUp } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
-import { findArticleById, getAllArticles, articlesData } from '../../../lib/articles';
-import BackButton from '../../../components/BackButton';
+import { findArticleById, getAllArticles, articlesData } from '@/lib/articles';
+import BackButton from '@/components/BackButton';
 
 const ArticlePage = ({ params }: { params: Promise<{ id: string }> }) => {
   const [article, setArticle] = useState(null);

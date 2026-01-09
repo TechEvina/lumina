@@ -9,16 +9,15 @@ import {
   approaches, 
   filterTherapists,
   getAvailabilityColor 
-} from '../../lib/therapists';
-import BackButton from '../../components/BackButton';
+} from '@/lib/therapists';
+import BackButton from '@/components/BackButton';
 
 const TherapistDirectory = () => {
+  const router = useRouter();
+  const allTherapists = getAllTherapists();
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedSpecialty, setSelectedSpecialty] = useState('All Specialties');
   const [selectedApproach, setSelectedApproach] = useState('All Approaches');
-  const [searchQuery, setSearchQuery] = useState('');
-  const router = useRouter();
-
-  const allTherapists = getAllTherapists();
 
   // filter therapists based on selections & search
   const getFilteredTherapists = () => {
@@ -199,13 +198,12 @@ const TherapistDirectory = () => {
                 {/* actions */}
                 <div className="flex gap-2">
                   {therapist.acceptingNew ? (
-                    // In app/therapists/page.js - update the booking button
-<button 
-  onClick={() => handleTherapistClick(therapist.id)}
-  className="flex-1 bg-blue-600 text-white px-4 py-2 mt-5 rounded-lg font-medium hover:bg-blue-700 transition-colors"
->
-  Book Consultation
-</button>
+                    <button 
+                      onClick={() => handleTherapistClick(therapist.id)}
+                      className="flex-1 bg-blue-600 text-white px-4 py-2 mt-5 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+                    >
+                      Book Consultation
+                    </button>
                   ) : (
                     <button className="flex-1 bg-gray-300 text-gray-600 px-4 py-2 rounded-lg font-medium cursor-not-allowed">
                       Join Waitlist

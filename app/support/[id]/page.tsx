@@ -11,7 +11,7 @@ import {
   getAllDiscussions,
   getCategoryColor,
   users
-} from '../../../lib/forum';
+} from '@/lib/forum';
 import { 
   getForumStats, 
   toggleCommentLike, 
@@ -22,8 +22,8 @@ import {
   setCommentCount,
   togglePostLike,
   isPostLiked as checkPostLiked
-} from '../../../lib/forumStorage';
-import BackButton from '../../../components/BackButton';
+} from '@/lib/forumStorage';
+import BackButton from '@/components/BackButton';
 
 const DiscussionPage = ({ params }: { params: Promise<{ id: string }> }) => {
   const [newComment, setNewComment] = useState('');
